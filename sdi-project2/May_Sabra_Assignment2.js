@@ -23,7 +23,22 @@
 	kidCloset(3);
 	
 //Boolean Function
-
+	var clothes = function(handMeDowns, clothesFit) {
+		var newClothes;
+		if (handMeDowns >= 2) {
+			if (clothesFit === true) {
+				console.log("The clothes we received fit fine, we can use them.");
+			}else{
+				console.log("These clothes aren't the right size, I'll give them away.");
+			}
+		}else{
+			console.log("We didn't get any hand me downs, so I have nothing to put in the closet.");
+		}
+		newClothes = "We received " + handMeDowns + " boxes of clothes from my sister that we can use.";
+		return newClothes;
+	};
+	var weHaveClothes = clothes(2, true);
+	console.log(weHaveClothes);
 
 
 
