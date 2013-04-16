@@ -40,12 +40,20 @@
 	var weHaveClothes = clothes(2, true);
 	console.log(weHaveClothes);
 
-
-
-
 //Number Function
-
-
+	var shoes = function(pairs) {
+	var needSandals;
+		console.log("We have a bag of shoes that are all different. I need to find out how many are sandals.");
+		sandals=1;
+		while(sandals <= pairs) {
+			console.log(sandals);
+			sandals++;
+		}
+	needSandals = "There are " + pairs + " pairs of sandals.";
+	return needSandals;
+	};
+	var howManySandals = shoes(3);
+	console.log(howManySandals);
 
 
 
