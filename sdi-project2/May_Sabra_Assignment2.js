@@ -55,10 +55,15 @@
 	var howManySandals = shoes(3);
 	console.log(howManySandals);
 
-
-
 //String Function
-
+	var checkClothes = function(tops, bottoms) {
+		var boyClothes;
+		console.log("I need to find out if there are " + tops + " and " + bottoms + " available to use.");
+		boyClothes = "Once I know what is there I can put outfits together.";
+		return boyClothes;
+	};
+	var whatIsThere = checkClothes("shirts", "pants");
+	console.log(whatIsThere);
 
 
 
