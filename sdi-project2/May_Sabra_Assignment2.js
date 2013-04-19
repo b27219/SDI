@@ -52,10 +52,10 @@
 	needSandals = "There are " + pairs + " pairs of sandals.";
 	return needSandals;
 	};
-	var howManySandals = shoes(3);
+	var howManySandals = shoes(2);
 	console.log(howManySandals);
 
-//String Function
+//String Function	
 	var checkClothes = function(tops, bottoms) {
 		var boyClothes;
 		console.log("I need to find out if there are " + tops + " and " + bottoms + " available to use.");
@@ -65,7 +65,22 @@
 	var whatIsThere = checkClothes("shirts", "pants");
 	console.log(whatIsThere);
 
-
-
-
-//Array Function
+//Array Function	
+	var itemCount = ["shorts", "shirts", "jackets"];
+	var itemNumber = [8, 12, 4];
+	var totalNumber = function( ) {
+	var howMuch;
+		var sandals = 2;
+		console.log("I need to figure out how many outfits I can make with the two pairs of sandals. This is what I have:");
+		for(var i=0; i < itemNumber.length; i++){
+			console.log("For " + itemCount[i] + " there are " + itemNumber[i] + ". I can make " + itemNumber[i]/sandals + " outfits with the sandals.");
+		}	
+		outfits = "It looks like we can make several outfits with these items.";
+		return outfits;
+	}
+	var projectDone = totalNumber( );
+	console.log(projectDone);
+	
+	
+		
+	
