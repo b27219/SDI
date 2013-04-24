@@ -9,7 +9,7 @@
 		travelers: ["Robby", " Sabra", " Bridger", " Isabel"]
 	};
 	
-	//Method Procedure - 2
+	//Method Procedure 
 	var vacationDays = {
 		type: "family",
 		//Property: String
@@ -36,18 +36,32 @@
 			if (myPassports == this.passport) {
 				if (mySavings >= this.savings) {
 					console.log("We got our passports which means we can go on a Disney Cruise.");
-					return true; //boolen return
+					return true; 
 				}else {
 					console.log("We have our passports, but not quite enough money.");
-					return false; //boolean return
+					return false;
 				}
 			} else {
 					console.log("No passports. We will just go to Disneyland.");
-					return false; //boolean return
+					return false; 
 				}
 			}
 		};
 		
 		
-		//Testing terminal and git
+//Accessor
+	var passengers = {
+		heads: 4,
+		tickets: function (who) {
+			var needNumberTickets;
+			console.log("We need to book plane tickets for everyone, how many do we need? " + who);
+			numberTickets = 1;
+			while (numberTickets <= this.heads) {
+				console.log(numberTickets);
+				numberTickets++; 
+			}
+			needNumberTickets = this.heads
+			return needNumberTickets;
+		}
+	};		
 
