@@ -65,3 +65,37 @@
 		}
 	};		
 
+//Mutator Method
+	var myLodging = {
+		weekStay: 3,
+		dailyBreakfast: 25,
+		totalHotelCost: function (json) {
+			var whichHotel;
+			console.log("I need to find a hotel. Here are my options:");
+			for (var i = 0; i < json.lodging.length; i++) {
+				console.log(" ");
+				if (json.lodging[i].breakfast === false) {
+					console.log(json.lodging[i].hotel + " does not serve a continental breakfast.");
+					for (var d = 1; d <= this.weekStay; d++) {
+						console.log("We will need $" + this.dailyBreakfast + " for Day " + d + " breakfast.");
+					}
+				}else {
+					console.log("Looks like breakfast is included at " + json.lodging[i].hotel + ".");
+				}
+				var theLodging = json.lodging[i];
+				var pricePerWeek = theLodging.pricePerNight*this.weekStay;
+				console.log("The " + theLodging.hotel + " is $" + theLodging.pricePerNight + " per night. This will cost $" + pricePerWeek + " for the week.");
+				if (json.lodging[i].breakfast === false) {
+					var pricePerWeek = pricePerWeek + (this.dailyBreakfast*this.weekStay); 
+					console.log("Plus $" + this.dailyBreakfast*this.weekStay + " to cover breakfast for the week, making it $" + pricePerWeek + " for the week.");
+				}else {
+					console.log("Breakfast included!");
+					
+				}
+				
+			}
+			console.log(" ");
+			whichHotel = "I think we will stay at " + json.lodging[1].hotel + ". It seems to be the best deal.";
+			return whichHotel;
+		}
+	};
