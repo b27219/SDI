@@ -130,3 +130,23 @@
 		console.log(waitForFall().addPerson + " She will be added to the guest list.")	
 		}
 	};
+
+
+//all functions
+	vacationDays.myVacation("vacation");
+	if (disneyCruise.canGo(4000, true)) {
+		console.log("I'm so excited to take my kids on a Disney Cruise!");
+	}else {
+		console.log("No cruise this year, but I think it will still be fun.");
+	};
+
+	var howManyTix = passengers.tickets(ourTrip.travelers);
+	console.log("We need " + howManyTix + " plane tickets.");
+	
+	var theHotel = myLodging.totalHotelCost(json2);
+	console.log(theHotel);
+	console.log("It's special features include:");
+	console.log(features());
+
+	allTheGuests.whoAreWe(json);		
+	
