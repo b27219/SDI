@@ -99,3 +99,34 @@
 			return whichHotel;
 		}
 	};
+
+//Return Array	
+
+	function features() {
+		var specialFeatures = [];
+		specialFeatures[0] = "three pools";
+		specialFeatures[1] = " the Mickey Mouse Penthouse";
+		specialFeatures[2] = " and a character breakfast and dinner.";
+		
+		return specialFeatures.join(); 
+	}
+	
+//Object from json file 
+	var allTheGuests = {
+		whoAreWe: function (json) {
+			console.log("To book a room, I will need to give them our names and information.");
+			for (var key in json.guests) {
+				var guest = json.guests[key];
+				console.log(guest.name + ": " + guest.type + ", age:" + guest.age);
+			}
+			var waitForFall = function () {
+				var plusOne = {
+					"addPerson": "Grandma's coming too!"
+				};
+				console.log("If we wait until the fall to go, my mom will come with us to help with the kids.");
+				babysit.push("She can make it");
+				return plusOne; 
+		};
+		console.log(waitForFall().addPerson + " She will be added to the guest list.")	
+		}
+	};
