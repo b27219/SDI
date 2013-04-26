@@ -4,6 +4,7 @@
 //Assignment 3
 
 //Global Variables
+	var babysit = [];
 	var ourTrip = {
 		//Property Array
 		travelers: ["Robby", " Sabra", " Bridger", " Isabel"]
@@ -36,20 +37,19 @@
 			if (myPassports == this.passport) {
 				if (mySavings >= this.savings) {
 					console.log("We got our passports which means we can go on a Disney Cruise.");
-					return true; 
+					return true; //boolen return
 				}else {
 					console.log("We have our passports, but not quite enough money.");
-					return false;
+					return false; //boolean return
 				}
 			} else {
 					console.log("No passports. We will just go to Disneyland.");
-					return false; 
+					return false; //boolean return
 				}
 			}
 		};
-		
-		
-//Accessor
+
+//Method Accessor 
 	var passengers = {
 		heads: 4,
 		tickets: function (who) {
@@ -58,14 +58,15 @@
 			numberTickets = 1;
 			while (numberTickets <= this.heads) {
 				console.log(numberTickets);
-				numberTickets++; 
+				numberTickets++; //math
 			}
 			needNumberTickets = this.heads
-			return needNumberTickets;
+			return needNumberTickets; // return number
 		}
-	};		
+	};
 
-//Mutator Method
+// Mutator Method
+
 	var myLodging = {
 		weekStay: 3,
 		dailyBreakfast: 25,
@@ -76,6 +77,7 @@
 				console.log(" ");
 				if (json.lodging[i].breakfast === false) {
 					console.log(json.lodging[i].hotel + " does not serve a continental breakfast.");
+					//nested loop
 					for (var d = 1; d <= this.weekStay; d++) {
 						console.log("We will need $" + this.dailyBreakfast + " for Day " + d + " breakfast.");
 					}
@@ -86,7 +88,7 @@
 				var pricePerWeek = theLodging.pricePerNight*this.weekStay;
 				console.log("The " + theLodging.hotel + " is $" + theLodging.pricePerNight + " per night. This will cost $" + pricePerWeek + " for the week.");
 				if (json.lodging[i].breakfast === false) {
-					var pricePerWeek = pricePerWeek + (this.dailyBreakfast*this.weekStay); 
+					var pricePerWeek = pricePerWeek + (this.dailyBreakfast*this.weekStay); // Mutator
 					console.log("Plus $" + this.dailyBreakfast*this.weekStay + " to cover breakfast for the week, making it $" + pricePerWeek + " for the week.");
 				}else {
 					console.log("Breakfast included!");
@@ -108,10 +110,10 @@
 		specialFeatures[1] = " the Mickey Mouse Penthouse";
 		specialFeatures[2] = " and a character breakfast and dinner.";
 		
-		return specialFeatures.join(); 
+		return specialFeatures.join(); // return array
 	}
 	
-//Object from json file 
+//Property: Object from json
 	var allTheGuests = {
 		whoAreWe: function (json) {
 			console.log("To book a room, I will need to give them our names and information.");
@@ -125,19 +127,18 @@
 				};
 				console.log("If we wait until the fall to go, my mom will come with us to help with the kids.");
 				babysit.push("She can make it");
-				return plusOne; 
-		};
+				return plusOne; //return object
+			};
 		console.log(waitForFall().addPerson + " She will be added to the guest list.")	
 		}
 	};
 
-
-//all functions
+//Functions
 	vacationDays.myVacation("vacation");
 	if (disneyCruise.canGo(4000, true)) {
 		console.log("I'm so excited to take my kids on a Disney Cruise!");
 	}else {
-		console.log("No cruise this year, but I think it will still be fun.");
+		console.log("No cruise this year, maybe another year.");
 	};
 
 	var howManyTix = passengers.tickets(ourTrip.travelers);
@@ -148,5 +149,4 @@
 	console.log("It's special features include:");
 	console.log(features());
 
-	allTheGuests.whoAreWe(json);		
-	
+	allTheGuests.whoAreWe(json);	
