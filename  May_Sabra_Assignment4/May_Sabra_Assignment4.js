@@ -3,28 +3,31 @@
 //SDI 1304
 //Assignment 4
 
+
+var myLibrary = function() {
 //String Functions
 	//Validate phone number
-	function phoneNumber(myNumber) {
-		var numberCheck = /^(\d{3})-(\d{3})-(\d{4})$/;
-		if (myNumber.match(numberCheck)) {
-			numWorks = myNumber + " is valid.";
-			return numWorks;
+		function phoneNumber(myNumber) {
+		var numCheck = /^(\d{3})-(\d{3})-(\d{4})$/;
+		if (myNumber.match(numCheck)){
+			return true;
 		}else {
-			notWork = "The number " + myNumber + " is not valid";
-			return notWork;
+			return false;
 		}
 	};
 	
 	
 	
 	
+return {
+	"phoneNumber": phoneNumber
+}	
 	
-	
-	
+}	
 	
 	
 //Calling all Functions!
+var newLib = new myLibrary();
+
 	//Validate Phone Number
-	var theNumber = phoneNumber(801-555-5555);
-	console.log(theNumber);	
+	console.log("Is this a phone number? " + newLib.phoneNumber("123-456-7890"));	
