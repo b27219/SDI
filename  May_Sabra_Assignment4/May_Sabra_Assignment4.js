@@ -17,10 +17,22 @@ var myLibrary = function() {
 	};
 	
 	
+	//Validate email address
+	function email(address) {
+		var addressCheck = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
+		if (address.match(addressCheck)){
+			return true;
+		}else {
+			return false;
+		}
+	};
+	
+	
 	
 	
 return {
-	"phoneNumber": phoneNumber
+	"phoneNumber": phoneNumber,
+	"email": email
 }	
 	
 }	
@@ -30,4 +42,5 @@ return {
 var newLib = new myLibrary();
 
 	//Validate Phone Number
-	console.log("Is this a phone number? " + newLib.phoneNumber("123-456-7890"));	
+	console.log("Is this a phone number? " + newLib.phoneNumber("123-456-7890"));
+	console.log("Is this an email address? " + newLib.email("sabra.may@gmail.com"));	
