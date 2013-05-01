@@ -27,12 +27,23 @@ var myLibrary = function() {
 		}
 	};
 	
+	//Validate URL
+	function validateURL(myURL) {
+		var urlCheck = /(ftp|http|https):\/\/(\w+:{0,1}\w*@)?(\S+)(:[0-9]+)?(\/|\/([\w#!:.?+=&%@!\-\/]))?/;
+		if (myURL.match(urlCheck)){
+			return true;
+		}else {
+			return false;
+		}
+	};
+	
 	
 	
 	
 return {
 	"phoneNumber": phoneNumber,
-	"email": email
+	"email": email,
+	"validateURL": validateURL,
 }	
 	
 }	
@@ -43,4 +54,7 @@ var newLib = new myLibrary();
 
 	//Validate Phone Number
 	console.log("Is this a phone number? " + newLib.phoneNumber("123-456-7890"));
-	console.log("Is this an email address? " + newLib.email("sabra.may@gmail.com"));	
+	//Validate Email Address
+	console.log("Is this an email address? " + newLib.email("me@thisaddress.com"));
+	//Validate URL
+	console.log("Is this a URL? " + newLib.validateURL("http://google.com"));	
