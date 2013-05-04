@@ -42,6 +42,12 @@
 		}	
 	};
 	
+	//String Separator
+	function separator () {
+		var fwdSlash = "/";
+		var separate = ourNames.replace( /, /g, fwdSlash);
+		return separate;
+	
 	
 	
 	
@@ -58,3 +64,6 @@
 	//Validate URL
 	var myURL = validateURL("http://google.com");
 	console.log(myURL);	
+	//String Separator
+	var ourNames= "Robby, Sabra, Bridger, Isabel";
+	console.log(separator());
