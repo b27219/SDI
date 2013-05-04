@@ -31,13 +31,15 @@
 	};
 	
 	//Validate URL
-	function validateURL(myURL) {
-		var urlCheck = /(ftp|http|https):\/\/(\w+:{0,1}\w*@)?(\S+)(:[0-9]+)?(\/|\/([\w#!:.?+=&%@!\-\/]))?/;
-		if (myURL.match(urlCheck)){
-			return true;
+	function validateURL(URL) {
+		var theURL = /(ftp|http|https):\/\/(\w+:{0,1}\w*@)?(\S+)(:[0-9]+)?(\/|\/([\w#!:.?+=&%@!\-\/]))?/;
+		if (URL.match(theURL)) {
+			urlValid = URL + " is valid.";
+			return urlValid;
 		}else {
-			return false;
-		}
+			urlInvalid = URL + " is invalid.";
+			return urlInvalid;
+		}	
 	};
 	
 	
@@ -54,4 +56,5 @@
 	var myEmail = email("myname@gmail.com");
 	console.log(myEmail);
 	//Validate URL
-	console.log("Is this a URL? " + newLib.validateURL("http://google.com"));	
+	var myURL = validateURL("http://google.com");
+	console.log(myURL);	
