@@ -3,10 +3,8 @@
 //SDI 1304
 //Assignment 4
 
-
-
 //String Functions
-	//Validate phone number
+	//Validate Phone Number
 	function phoneNumber(myNumber) {
 		var numCheck = /^(\d{3})-(\d{3})-(\d{4})$/;
 		if (myNumber.match(numCheck)) {
@@ -16,7 +14,6 @@
 			numInvalid = myNumber + " is not valid.";
 		}
 	};
-	
 	
 	//Validate email address
 	function email(address) {
@@ -29,7 +26,6 @@
 			return emailInvalid;
 		}
 	};
-	
 	//Validate URL
 	function validateURL(URL) {
 		var theURL = /(ftp|http|https):\/\/(\w+:{0,1}\w*@)?(\S+)(:[0-9]+)?(\/|\/([\w#!:.?+=&%@!\-\/]))?/;
@@ -47,11 +43,20 @@
 		var fwdSlash = "/";
 		var separate = ourNames.replace( /, /g, fwdSlash);
 		return separate;
-	
-	
-	
+	};
 	
 
+
+//Number Functions
+	//Decimal Places
+	function totalAmount(amount) {
+		var total = amount.toFixed(2);
+		return total;
+	};
+	
+	
+	
+	
 	
 	
 //Calling all Functions!
@@ -61,9 +66,13 @@
 	//Validate Email Address
 	var myEmail = email("myname@gmail.com");
 	console.log(myEmail);
-	//Validate URL
+	//Validate URL 
 	var myURL = validateURL("http://google.com");
-	console.log(myURL);	
+	console.log(myURL);
 	//String Separator
 	var ourNames= "Robby, Sabra, Bridger, Isabel";
 	console.log(separator());
+	//Decimal Places
+	console.log(totalAmount(123.456));
+	
+	
