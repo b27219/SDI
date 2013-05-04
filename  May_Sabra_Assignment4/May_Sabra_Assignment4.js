@@ -20,11 +20,13 @@
 	
 	//Validate email address
 	function email(address) {
-		var addressCheck = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
-		if (address.match(addressCheck)){
-			return true;
+		var myAddress = address.match (/^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/);
+		if (myAddress) {
+			emailValid = address + " is valid.";
+			return emailValid;
 		}else {
-			return false;
+			emailInvalid = address + " is invalid.";
+			return emailInvalid;
 		}
 	};
 	
@@ -49,6 +51,7 @@
 	var myNum = phoneNumber("801-555-5555");
 	console.log(myNum);	
 	//Validate Email Address
-	console.log("Is this an email address? " + newLib.email("me@thisaddress.com"));
+	var myEmail = email("myname@gmail.com");
+	console.log(myEmail);
 	//Validate URL
 	console.log("Is this a URL? " + newLib.validateURL("http://google.com"));	
