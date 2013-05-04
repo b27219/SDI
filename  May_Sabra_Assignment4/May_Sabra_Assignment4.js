@@ -4,15 +4,16 @@
 //Assignment 4
 
 
-var myLibrary = function() {
+
 //String Functions
 	//Validate phone number
-		function phoneNumber(myNumber) {
+	function phoneNumber(myNumber) {
 		var numCheck = /^(\d{3})-(\d{3})-(\d{4})$/;
-		if (myNumber.match(numCheck)){
-			return true;
+		if (myNumber.match(numCheck)) {
+			numValid = myNumber + " is valid.";
+			return numValid;
 		}else {
-			return false;
+			numInvalid = myNumber + " is not valid.";
 		}
 	};
 	
@@ -40,20 +41,13 @@ var myLibrary = function() {
 	
 	
 	
-return {
-	"phoneNumber": phoneNumber,
-	"email": email,
-	"validateURL": validateURL,
-}	
-	
-}	
+
 	
 	
 //Calling all Functions!
-var newLib = new myLibrary();
-
 	//Validate Phone Number
-	console.log("Is this a phone number? " + newLib.phoneNumber("123-456-7890"));
+	var myNum = phoneNumber("801-555-5555");
+	console.log(myNum);	
 	//Validate Email Address
 	console.log("Is this an email address? " + newLib.email("me@thisaddress.com"));
 	//Validate URL
