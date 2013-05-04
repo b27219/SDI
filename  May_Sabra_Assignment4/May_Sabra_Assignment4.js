@@ -54,9 +54,12 @@
 		return total;
 	};
 	
-	
-	
-	
+	//String Version of a Number
+	var howMany = function() {
+		books = parseInt(myBooks);
+		return books;
+	};
+
 	
 	
 //Calling all Functions!
@@ -74,5 +77,8 @@
 	console.log(separator());
 	//Decimal Places
 	console.log(totalAmount(123.456));
+	//String Version of a Number
+	var myBooks = "3 books";
+	console.log("I used " + howMany() + " books to get through this class.");
 	
 	
